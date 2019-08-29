@@ -1,0 +1,152 @@
+body {
+  background-color: #1f2732;
+  color: #fff;
+}
+
+.page-wrapper {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 50px 0px 100px 0px;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+#tempInput {
+  max-width: 300px;
+}
+
+#temps {
+  max-width: 300px;
+  margin: 20px 0px;
+}
+
+.thermometer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotateBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.rotateBar::after {
+  content: "Boil";
+  transform: rotate(90deg);
+}
+
+.rotateBar::before {
+  content: "Freeze";
+  transform: rotate(90deg);
+  margin-right: -8px;
+}
+/*
+.rotate.kelvin::after {
+  content: "373";
+  transform: rotate(90deg);
+}
+
+.rotate.kelvin::before {
+  content: "173";
+  transform: rotate(90deg);
+}
+
+.rotate.fahrenheit::after {
+  content: "212";
+  transform: rotate(90deg);
+}
+
+.rotate.fahrenheit::before {
+  content: "-148";
+  transform: rotate(90deg);
+}
+
+.rotate.celsius::after {
+  content: "100";
+  transform: rotate(90deg);
+}
+
+.rotate.celsius::before {
+  content: "-100";
+  transform: rotate(90deg);
+}
+*/
+
+meter {
+  width: 200px;
+  height: 60px;
+  background-color: white;
+}
+
+meter::-webkit-meter-bar {
+  background: none;
+  background-color: white;
+}
+meter::-moz-meter-bar {
+  background: none;
+  background-color: white;
+  border: 2px solid white;
+}
+
+meter::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #ff497c 0%, #ff497c 100%);
+  background-size: 100% 100%;
+}
+
+meter::-webkit-meter-optimum-value,
+meter::-webkit-meter-suboptimum-value,
+meter::-webkit-meter-even-less-good-value {
+  transition: all 1s;
+}
+meter::-moz-meter-optimum-value,
+meter::-moz-meter-suboptimum-value,
+meter::-moz-meter-even-less-good-value {
+  transition: all 1s;
+}
+
+meter.navyblue::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #000b80 0%, #000b80 100%);
+}
+
+meter.lightblue::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #94e5ff 0%, #94e5ff 100%);
+}
+
+meter.yellow::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #ffff4d 0%, #ffff4d 100%);
+}
+
+meter.green::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #77dd77 0%, #77dd77 100%);
+}
+
+meter.orange::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #ffa500 0%, #ffa500 100%);
+}
+
+meter.red::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #ff392e 0%, #ff392e 100%);
+}

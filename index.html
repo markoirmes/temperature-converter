@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="row">
+        <div class="column">
+          <h2>Will the water freeze or boil?</h2>
+          <p>Choose your degree scale, enter value and find out!</p>
+          <input
+            id="tempInput"
+            type="number"
+            value="273"
+            min="0"
+            step="1"
+            onkeyup="calculateTemperature()"
+            onchange="validate()"
+          />
+          <select id="temps" onchange="calculateTemperature()">
+            <option value="Kelvin" selected="selected">Kelvin</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Celsius">Celsius</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="rotateBar">
+            <meter
+              class="thermometer"
+              id="thermometerBar"
+              min="273"
+              max="373"
+              value="273"
+              title="K"
+            ></meter>
+          </div>
+        </div>
+        <div class="column">
+          <p id="kelvinText">Kelvin: 273</p>
+          <p id="celsiusText">Celsius: 0</p>
+          <p id="fahrenheitText">Fahrenheit: 32</p>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

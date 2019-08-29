@@ -6,6 +6,7 @@ const tempInput = document.getElementById("tempInput");
 const kelvinText = document.getElementById("kelvinText");
 const fahrenheitText = document.getElementById("fahrenheitText");
 const celsiusText = document.getElementById("celsiusText");
+const result = document.getElementById("result");
 
 /* validate */
 function validate() {
@@ -38,21 +39,29 @@ function calculateTemperature() {
 
   const therm = celsius;
 
-  if (therm <= 10) {
+  if (therm <= 20) {
     document.getElementsByClassName("thermometer")[0].className =
       "thermometer navyblue";
-  } else if (therm >= 11 && therm <= 20) {
+  } else if (therm >= 21 && therm <= 40) {
     document.getElementsByClassName("thermometer")[0].className =
       "thermometer lightblue";
-  } else if (therm >= 21 && therm <= 30) {
+  } else if (therm >= 41 && therm <= 60) {
     document.getElementsByClassName("thermometer")[0].className =
       "thermometer yellow";
-  } else if (therm >= 31 && therm <= 40) {
+  } else if (therm >= 61 && therm <= 80) {
     document.getElementsByClassName("thermometer")[0].className =
       "thermometer orange";
   } else {
     document.getElementsByClassName("thermometer")[0].className =
       "thermometer red";
+  }
+
+  if (therm <= 0) {
+    result.innerHTML = "The water will FREEZE!";
+  } else if (therm >= 100) {
+    result.innerHTML = "The water will BOIL!";
+  } else {
+    result.innerHTML = "The water will be in liquid state!";
   }
 
   /* change value of the meter bar */
